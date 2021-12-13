@@ -1,0 +1,23 @@
+<v1:clippings xmlns:v1="v1.unified.clipping.pure.atira.dk">
+    <v1:clipping id="clipping1" type="clipping" managedInPure="false">
+        <v1:title>Clipping Title</v1:title>
+        <v1:startDate>1-1-2011</v1:startDate>
+        <v1:managedBy lookupHint="orgSync" lookupId="organisation1"/>
+        <v1:visibility>Public</v1:visibility>
+        <v1:mediaReferences>
+            <v1:mediaReference type="Contribution" id="reference1">
+                <v1:title>referencetitle</v1:title>
+                <v1:persons>
+                    <v1:person id="personAssoc1">
+                        <v1:person lookupId="person1" lookupHint="personSync" origin="internal" />
+                        <v1:organisations>
+                            <v1:organisation lookupId="organisation1" lookupHint="orgSync" origin="internal"/>
+                        </v1:organisations>
+                    </v1:person>
+                </v1:persons>
+                <v1:country>da</v1:country>
+                <v1:date>1-1-2011</v1:date>
+            </v1:mediaReference>
+        </v1:mediaReferences>
+    </v1:clipping>
+</v1:clippings>

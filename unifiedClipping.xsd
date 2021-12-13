@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:commons="v3.commons.pure.atira.dk"
+           xmlns="v1.unified.clipping.pure.atira.dk"
+           attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="v1.unified.clipping.pure.atira.dk">
+
+    <xs:import schemaLocation="commons.xsd" namespace="v3.commons.pure.atira.dk" />
+
+    <xs:element name="clippings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="clipping" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="clipping" type="clippingType"/>
+
+    <xs:complexType name="clippingType">
+        <xs:sequence>
+            <xs:element name="title" type="commons:string_1024" minOccurs="1" />
+            <xs:element name="translatedTitles" type="translatedTitles" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Translated titles of the clipping. Use if the title is different in other languages</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="category" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The category classification. Should be a token from the scheme /dk/atira/pure/clipping/category</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="description" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The description of the clipping, this will add a description of the type /dk/atira/pure/clipping/descriptions/clippingdescription</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="additionalDescriptions" type="additionalDescriptions" minOccurs="0" >
+                <xs:annotation>
+                    <xs:documentation>Descriptions of the prize, use if description is different in another language, or if description is of another type than /dk/atira/pure/clipping/descriptions/clippingdescription</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="startDate" type="commons:date" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The start date of the clipping</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="endDate" type="commons:date" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The end date of the clipping</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="managedBy" type="managedBy" minOccurs="1" />
+            <xs:element name="event" type="commons:simpleEvent" minOccurs="0"/>
+            <xs:element name="keywords" type="keywords" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The keywords for the clipping</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="visibility" type="commons:visibility"/>
+            <xs:element name="workflow" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Used to set the workflow state of the prize (Workflow states: entryInProgress, forValidation, validated)
+                        Note that workflow is disabled by default, and must be enabled in Pure, if values are present in this tag
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="mediaReferences" minOccurs="0">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>The references for the clipping</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                        <xs:element name="mediaReference" type="mediaReference" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedClippings" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedResearchOutput" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedActivities" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedProjects" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="relatedPrizes" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedPhdTheses" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedDataSets" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="relatedImpacts" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="contentReference" type="commons:contentReference" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="comments" type="commons:comments" minOccurs="0"/>
+
+        </xs:sequence>
+        <xs:attribute type="commons:string_400" name="id" use="required">
+            <xs:annotation>
+                <xs:documentation>The external ID of the clipping, this must be an unique value</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="commons:classification" name="type" use="optional" default="clipping">
+            <xs:annotation>
+                <xs:documentation>The type classification. Should be a token from the scheme /dk/atira/pure/clipping/clippingtypes/clipping</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:boolean" name="managedInPure" use="optional">
+            <xs:annotation>
+                <xs:documentation>Determines whether the clipping is managed in Pure, if set to to true the clipping will be fully editable and deletable in Pure</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="translatedTitles">
+        <xs:sequence>
+            <xs:element name="title" type="commons:localized_text_1024_lang" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Translated title of the prize. Can be specified in multiple languages, if your Pure is multilingual</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="organisations">
+        <xs:sequence>
+            <xs:element name="organisation" type="organisation" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="organisation">
+        <xs:annotation>
+            <xs:documentation>
+                Can be an internal or external person. Use origin to enforce either internal or external
+                If the person is an internal person in Pure, then the lookupId attribute must be used.
+                If the person is an external person, and id is given, matching will be done on the id. If not found, then matching will be done on name. If still not found, then an external person with the specified id and name will be created.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="name" type="commons:string_1024" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="country" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The country of the external organisation. token from /dk/atira/pure/core/countries</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="type" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The type of the external organisation (will default if nothing is written)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="commons:originId"/>
+    </xs:complexType>
+
+    <xs:complexType name="personAssociation">
+        <xs:all>
+            <xs:element name="person" type="internalExternalPerson" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Internal person</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="organisations" type="organisations" minOccurs="0"/>
+            <xs:element name="role" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The role of the person. token from /dk/atira/pure/clipping/roles/clipping</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+        <xs:attribute type="commons:string_400" name="id" use="required">
+            <xs:annotation>
+                <xs:documentation>ID of the personAssociation, this must be unique for each personAssociation</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="internalExternalPerson">
+        <xs:annotation>
+            <xs:documentation>
+                Can be an internal or external person. Use origin to enforce either internal or external
+                If the person is an internal person in Pure, then the lookupId attribute must be used.
+                If the person is an external person, and id is given, matching will be done on the id. If not found, then matching will be done on name. If still not found, then an external person with the specified id and name will be created.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="firstName" type="commons:string_1024" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>First name of the person. Will only be used on external persons</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="lastName" type="commons:string_1024" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Last name of the person. Will only be used on external persons</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="country" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>token from the classification scheme /dk/atira/pure/core/countries</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+        <xs:attributeGroup ref="commons:originId"/>
+    </xs:complexType>
+
+    <xs:complexType name="mediaReference">
+        <xs:all>
+            <xs:element name="title" type="commons:string_1024" minOccurs="1" />
+            <xs:element name="translatedTitles" type="translatedTitles" minOccurs="0"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" />
+            <xs:element name="additionalDescriptions" type="additionalDescriptions" minOccurs="0" >
+                <xs:annotation>
+                    <xs:documentation>Descriptions of the prize, use if description is different in another language than the default</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="persons" minOccurs="0">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>The persons related to the reference</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element name="person" type="personAssociation" maxOccurs="unbounded" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="organisations" type="organisations" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The internal organisations related to the reference</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="url" type="commons:string_1024" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>An url to the reference</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="extent" type="commons:string_1024" minOccurs="0" />
+            <xs:element name="medium" type="commons:string_1024" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The medium of the reference</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mediaType" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The media type classification. Should be a token from the scheme /dk/atira/pure/clipping/mediatype</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="degreeOfRecognition" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The media type classification. Should be a token from the scheme /dk/atira/pure/clipping/degreeofrecognition</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="country" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The country classification. Should be a token from the scheme /dk/atira/pure/core/countries</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subdivision" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The classification for subdivision of the country. Should be a token from the scheme /dk/atira/pure/core/countries/subdivision</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="author" type="commons:string_1024" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>The author of the reference</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="date" type="commons:date" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Date of the reference</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fragment" type="commons:string_1024" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>NewsFlo Fragment</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="rank" type="commons:classification" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>NewsFlo Rank. Should be a token from the scheme /dk/atira/pure/clipping/rank (1-6)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+        <xs:attribute type="referenceType" name="type" use="required">
+            <xs:annotation>
+                <xs:documentation>The reference type. Must be either 'Contribution' or 'Coverage'</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="commons:string_400" name="id" use="required">
+            <xs:annotation>
+                <xs:documentation>The external ID of the clipping, this must be an unique value</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="referenceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Contribution"/>
+            <xs:enumeration value="Coverage"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="additionalDescriptions">
+        <xs:sequence>
+            <xs:element name="description" type="description" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="description">
+        <xs:simpleContent>
+            <xs:extension base="commons:localized_text_lang">
+                <xs:attribute name="type" type="commons:classification" use="required">
+                    <xs:annotation>
+                        <xs:documentation>The clipping description type. Must be a valid classification from the /dk/atira/pure/clipping/descriptions classification scheme</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="keywords">
+        <xs:sequence>
+            <xs:element name="keyword" type="commons:keyword" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="managedBy">
+        <xs:attributeGroup ref="commons:lookupId"/>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,76 @@
+<v1:clippings xmlns:v1="v1.unified.clipping.pure.atira.dk">
+    <v1:clipping id="clipping1" type="clipping/other" managedInPure="false">
+        <v1:title>Clipping Title</v1:title>
+        <v1:translatedTitles>
+            <!--1 or more repetitions:-->
+            <v1:title lang="de">translatedtitle1</v1:title>
+        </v1:translatedTitles>
+        <v1:category>novalue</v1:category>
+        <v1:description>description1</v1:description>
+        <v1:additionalDescriptions>
+            <v1:description lang="de" type="clippingdescription">descriptionDE</v1:description>
+        </v1:additionalDescriptions>
+        <v1:startDate>1-1-2011</v1:startDate>
+        <v1:endDate>2-2-2012</v1:endDate>
+        <v1:managedBy lookupHint="orgSync" lookupId="organisation1"/>
+        <v1:keywords>
+            <v1:keyword>free keyword</v1:keyword>
+            <v1:keyword lang="de">free keyword DE</v1:keyword>
+            <v1:keyword logicalName="keyword01" key="keyword01classification01">free keyword on keyword01</v1:keyword>
+            <v1:keyword logicalName="keyword01" key="keyword01classification01" lang="de">free keyword on keyword01 DE</v1:keyword>
+            <v1:keyword logicalName="keyword01" key="keyword01classification02" />
+            <v1:keyword logicalName="keyword01" key="keyword01classification03">free keyword in all locales</v1:keyword>
+        </v1:keywords>
+        <v1:visibility>Public</v1:visibility>
+        <v1:workflow>forApproval</v1:workflow>
+        <v1:mediaReferences>
+            <v1:mediaReference type="Contribution" id="reference1">
+                <v1:title>referencetitle</v1:title>
+                <v1:persons>
+                    <v1:person id="personAssoc1">
+                        <v1:person lookupId="person1" lookupHint="personSync" origin="internal" />
+                        <v1:role>researchcited</v1:role>
+                        <v1:organisations>
+                            <v1:organisation lookupId="organisation1" lookupHint="orgSync" origin="internal"/>
+                        </v1:organisations>
+                    </v1:person>
+                </v1:persons>
+                <v1:country>us</v1:country>
+                <v1:date>1-1-2011</v1:date>
+                <v1:url>http://www.referencetest.com</v1:url>
+                <v1:medium>medium1</v1:medium>
+                <v1:extent>extent info</v1:extent>
+                <v1:mediaType>radio</v1:mediaType>
+                <v1:degreeOfRecognition>international</v1:degreeOfRecognition>
+                <v1:subdivision>fl</v1:subdivision>
+                <v1:author>AuthorName1</v1:author>
+                <v1:fragment>fragment1</v1:fragment>
+                <v1:rank>1</v1:rank>
+            </v1:mediaReference>
+        </v1:mediaReferences>
+        <v1:relatedClippings>
+            <v1:contentReference contentId="clipping2" />
+        </v1:relatedClippings>
+        <v1:relatedResearchOutput>
+            <v1:contentReference contentId="publication1" />
+        </v1:relatedResearchOutput>
+        <v1:relatedActivities>
+            <v1:contentReference contentId="activity1" />
+        </v1:relatedActivities>
+        <v1:relatedProjects>
+            <v1:contentReference contentId="project1" />
+        </v1:relatedProjects>
+        <v1:relatedPrizes>
+            <v1:contentReference contentId="prize1" />
+        </v1:relatedPrizes>
+        <v1:relatedPhdTheses>
+            <v1:contentReference contentId="thesis1" />
+        </v1:relatedPhdTheses>
+        <v1:relatedDataSets>
+            <v1:contentReference contentId="dataset1" />
+        </v1:relatedDataSets>
+        <v1:relatedImpacts>
+            <v1:contentReference contentId="impact1" />
+        </v1:relatedImpacts>
+    </v1:clipping>
+</v1:clippings>
